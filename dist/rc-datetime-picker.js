@@ -854,7 +854,16 @@ var Time = function (_Component) {
     key: 'render',
     value: function render() {
       var _moment = this.state.moment;
-      var style = this.props.style;
+      var _props = this.props,
+          style = _props.style,
+          _props$minHour = _props.minHour,
+          minHour = _props$minHour === undefined ? 0 : _props$minHour,
+          _props$maxHour = _props.maxHour,
+          maxHour = _props$maxHour === undefined ? 23 : _props$maxHour,
+          _props$minMin = _props.minMin,
+          minMin = _props$minMin === undefined ? 0 : _props$minMin,
+          _props$maxMin = _props.maxMin,
+          maxMin = _props$maxMin === undefined ? 59 : _props$maxMin;
 
 
       return React__default.createElement(
@@ -890,13 +899,13 @@ var Time = function (_Component) {
               { className: 'slider-text' },
               'Hours:'
             ),
-            React__default.createElement(Slider, { min: 0, max: 23, defaultValue: _moment.hour(), value: _moment.hour(), onChange: this.handleChange.bind(this, 'hours') }),
+            React__default.createElement(Slider, { min: minHour, max: maxHour, defaultValue: _moment.hour(), value: _moment.hour(), onChange: this.handleChange.bind(this, 'hours') }),
             React__default.createElement(
               'span',
               { className: 'slider-text' },
               'Minutes:'
             ),
-            React__default.createElement(Slider, { min: 0, max: 59, defaultValue: _moment.minute(), value: _moment.minute(), onChange: this.handleChange.bind(this, 'minutes') })
+            React__default.createElement(Slider, { min: minMin, max: maxMin, defaultValue: _moment.minute(), value: _moment.minute(), onChange: this.handleChange.bind(this, 'minutes') })
           )
         )
       );
@@ -926,10 +935,10 @@ var _initialiseProps$1 = function _initialiseProps() {
   };
 
   this.handleChange = function (type, value) {
-    var _props = _this2.props,
-        onChange = _props.onChange,
-        range = _props.range,
-        rangeAt = _props.rangeAt;
+    var _props2 = _this2.props,
+        onChange = _props2.onChange,
+        range = _props2.range,
+        rangeAt = _props2.rangeAt;
 
     var _moment = _this2.state.moment.clone();
     var selected = _this2.props.moment;

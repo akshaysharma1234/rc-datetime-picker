@@ -106,6 +106,30 @@ See the [demo] page.
       <td>Min Date limit.</td>
     </tr>
     <tr>
+      <td>maxHour</td>
+      <td>number</td>
+      <td></td>
+      <td>Max Hour limit.</td>
+    </tr>
+    <tr>
+      <td>minHour</td>
+      <td>number</td>
+      <td></td>
+      <td>Min Hour limit.</td>
+    </tr>
+     <tr>
+      <td>maxMin</td>
+      <td>number</td>
+      <td></td>
+      <td>Max Minutes limit.</td>
+    </tr>
+     <tr>
+      <td>minMin</td>
+      <td>number</td>
+      <td></td>
+      <td>Min Minutes limit.</td>
+    </tr>
+    <tr>
       <td>weeks</td>
       <td>Array</td>
       <td>['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']</td>
