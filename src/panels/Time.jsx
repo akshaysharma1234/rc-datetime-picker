@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import ReactSlider from 'react-slider';
+import 'rc-slider/assets/index.css';
+import Slider from 'rc-slider';
 import moment from 'moment';
 
 
@@ -67,9 +68,9 @@ class Time extends Component {
           </div>
           <div className="sliders">
             <span className="slider-text">Hours:</span>
-            <ReactSlider min={0} max={23} value={_moment.hour()} onChange={this.handleChange.bind(this, 'hours')} withBars />
+            <Slider min={0} max={23} defaultValue={_moment.hour()} value={_moment.hour()} onChange={this.handleChange.bind(this, 'hours')} />
             <span className="slider-text">Minutes:</span>
-            <ReactSlider min={0} max={59} value={_moment.minute()} onChange={this.handleChange.bind(this, 'minutes')} withBars />
+            <Slider min={0} max={59} defaultValue={_moment.minute()} value={_moment.minute()} onChange={this.handleChange.bind(this, 'minutes')} />
           </div>
         </div>
       </div>

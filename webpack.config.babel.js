@@ -31,14 +31,13 @@ const config = {
       },
       {
         test: /\.(less|css)$/,
-        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader',
           'less-loader'
         ]
       }
-    ]
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
