@@ -2,20 +2,20 @@
  * rc-datetime-picker v1.6.1
  * https://github.com/AllenWooooo/rc-datetime-picker
  *
- * (c) 2018 Allen Wu
+ * (c) 2020 Allen Wu
  * License: MIT
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames/bind'), require('blacklist'), require('moment'), require('react-slider'), require('react-dom')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames/bind', 'blacklist', 'moment', 'react-slider', 'react-dom'], factory) :
-	(factory((global['rc-datetime-picker'] = {}),global.React,global.classNames,global.blacklist,global.moment,global.ReactSlider,global.ReactDOM));
-}(this, (function (exports,React,classNames,blacklist,moment,ReactSlider,ReactDOM) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames/bind'), require('blacklist'), require('moment'), require('rc-slider/assets/index.css'), require('rc-slider'), require('react-dom')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames/bind', 'blacklist', 'moment', 'rc-slider/assets/index.css', 'rc-slider', 'react-dom'], factory) :
+	(factory((global['rc-datetime-picker'] = {}),global.React,global.classNames,global.blacklist,global.moment,null,global.Slider,global.ReactDOM));
+}(this, (function (exports,React,classNames,blacklist,moment,index_css,Slider,ReactDOM) { 'use strict';
 
 var React__default = 'default' in React ? React['default'] : React;
 classNames = classNames && classNames.hasOwnProperty('default') ? classNames['default'] : classNames;
 blacklist = blacklist && blacklist.hasOwnProperty('default') ? blacklist['default'] : blacklist;
 moment = moment && moment.hasOwnProperty('default') ? moment['default'] : moment;
-ReactSlider = ReactSlider && ReactSlider.hasOwnProperty('default') ? ReactSlider['default'] : ReactSlider;
+Slider = Slider && Slider.hasOwnProperty('default') ? Slider['default'] : Slider;
 var ReactDOM__default = 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
 
 var WEEKS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -890,13 +890,13 @@ var Time = function (_Component) {
               { className: 'slider-text' },
               'Hours:'
             ),
-            React__default.createElement(ReactSlider, { min: 0, max: 23, value: _moment.hour(), onChange: this.handleChange.bind(this, 'hours'), withBars: true }),
+            React__default.createElement(Slider, { min: 0, max: 23, defaultValue: _moment.hour(), value: _moment.hour(), onChange: this.handleChange.bind(this, 'hours') }),
             React__default.createElement(
               'span',
               { className: 'slider-text' },
               'Minutes:'
             ),
-            React__default.createElement(ReactSlider, { min: 0, max: 59, value: _moment.minute(), onChange: this.handleChange.bind(this, 'minutes'), withBars: true })
+            React__default.createElement(Slider, { min: 0, max: 59, defaultValue: _moment.minute(), value: _moment.minute(), onChange: this.handleChange.bind(this, 'minutes') })
           )
         )
       );

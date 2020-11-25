@@ -2,7 +2,7 @@
  * rc-datetime-picker v1.6.1
  * https://github.com/AllenWooooo/rc-datetime-picker
  *
- * (c) 2018 Allen Wu
+ * (c) 2020 Allen Wu
  * License: MIT
  */
 'use strict';
@@ -16,7 +16,8 @@ var React__default = _interopDefault(React);
 var classNames = _interopDefault(require('classnames/bind'));
 var blacklist = _interopDefault(require('blacklist'));
 var moment = _interopDefault(require('moment'));
-var ReactSlider = _interopDefault(require('react-slider'));
+require('rc-slider/assets/index.css');
+var Slider = _interopDefault(require('rc-slider'));
 var ReactDOM = require('react-dom');
 var ReactDOM__default = _interopDefault(ReactDOM);
 
@@ -892,13 +893,13 @@ var Time = function (_Component) {
               { className: 'slider-text' },
               'Hours:'
             ),
-            React__default.createElement(ReactSlider, { min: 0, max: 23, value: _moment.hour(), onChange: this.handleChange.bind(this, 'hours'), withBars: true }),
+            React__default.createElement(Slider, { min: 0, max: 23, defaultValue: _moment.hour(), value: _moment.hour(), onChange: this.handleChange.bind(this, 'hours') }),
             React__default.createElement(
               'span',
               { className: 'slider-text' },
               'Minutes:'
             ),
-            React__default.createElement(ReactSlider, { min: 0, max: 59, value: _moment.minute(), onChange: this.handleChange.bind(this, 'minutes'), withBars: true })
+            React__default.createElement(Slider, { min: 0, max: 59, defaultValue: _moment.minute(), value: _moment.minute(), onChange: this.handleChange.bind(this, 'minutes') })
           )
         )
       );
